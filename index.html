@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shohruh | Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050907;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --green: #00ff88;
+    --dark: #050907;
+    --gray: #a0aaa5;
+}
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(5,9,7,0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #163b29;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--green);
+    text-shadow: 0 0 15px #00ff88;
+    transform: perspective(300px) rotateX(12deg);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+section {
+    padding: 110px 10%;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    color: var(--green);
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+h1 span {
+    color: var(--green);
+    text-shadow: 0 0 25px #00ff8870;
+}
+
+.hero p {
+    color: var(--gray);
+    margin-top: 25px;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 28px;
+    background: var(--green);
+    color: #00180c;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #00ff88;
+}
+
+.cube {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--green);
+    border-radius: 35px;
+    color: var(--green);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 65px;
+    font-weight: 800;
+    transform: perspective(600px) rotateY(-15deg) rotateX(10deg);
+    box-shadow: 15px 15px 0 #006b3b, 0 0 50px #00ff8840;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: perspective(600px) rotateY(15deg) rotateX(-10deg) translateY(-15px); }
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--green);
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.about-text {
+    color: var(--gray);
+    line-height: 2;
+    max-width: 800px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #0b1510;
+    border: 1px solid #16472e;
+    border-radius: 15px;
+    padding: 28px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--green);
+    box-shadow: 0 0 25px #00ff8820;
+}
+
+.card h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    padding: 12px 23px;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    color: var(--green);
+    background: #07150d;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: var(--gray);
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #16472e;
+    color: var(--gray);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--green);
+}
+
+@media(max-width: 750px) {
+    header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 100px 6%;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cube {
+        width: 150px;
+        height: 150px;
+        font-size: 45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SHOH<span style="color:white">RUH.</span></div>
+    <nav>
+        <a href="#home">Bosh sahifa</a>
+        <a href="#about">Men haqimda</a>
+        <a href="#skills">Bilimlar</a>
+        <a href="#projects">Loyihalar</a>
+        <a href="#contact">Aloqa</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="tag">WELCOME TO MY WORLD</div>
+        <h1>Salom, men <span>Shohruh</span></h1>
+        <h2 style="color:#00ff88;margin-top:12px;">Future Developer</h2>
+        <p>
+            Men 14 yoshdaman. Saytlar yaratish, yangi loyihalar
+            qilish va katta g‘oyalar ustida ishlashni yaxshi ko‘raman.
+            Bu mening dasturchilik yo‘limdagi birinchi portfolio saytim!
+        </p>
+        <a href="#projects" class="btn">Loyihalarimni ko‘r →</a>
+    </div>
+
+    <div class="cube">S</div>
+</section>
+
+<section id="about">
+    <h2 class="title">01. Men haqimda</h2>
+    <p class="about-text">
+        Mening ismim Shohruh. Men 14 yoshdaman.
+        Texnologiyalar, dasturlash va internet olamiga juda qiziqaman.
+        Men yangi saytlar yaratishni, loyihalar qilishni va
+        o‘z g‘oyalarimni haqiqiy mahsulotga aylantirishni yoqtiraman.
+        Kelajakda katta loyihalar yaratib, kuchli dasturchi bo‘lishni xohlayman.
+    </p>
+</section>
+
+<section id="skills">
+    <h2 class="title">02. Mening bilimlarim</h2>
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Web Design</div>
+        <div class="skill">Creative Ideas</div>
+        <div class="skill">Programming</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="title">03. Mening loyihalarim</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>🌐 Web Design</h3>
+            <p>Men yaratadigan zamonaviy va chiroyli saytlar.</p>
+        </div>
+        <div class="card">
+            <h3>💻 My Portfolio</h3>
+            <p>Bu mening shaxsiy portfolio saytim.</p>
+        </div>
+        <div class="card">
+            <h3>🚀 Future Projects</h3>
+            <p>Kelajakda amalga oshirmoqchi bo‘lgan katta g‘oyalarim.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="title">04. Men bilan bog‘lanish</h2>
+    <p>Yangi g‘oyalar va loyihalar uchun doimo ochiqman!</p>
+    <a href="mailto:your@email.com" class="btn">Menga yozish ✉</a>
+</section>
+
+<footer>
+    © 2026 <span>SHOHRUH</span>. Barcha huquqlar himoyalangan.
+    <br>Made with 💚 and code.
+</footer>
+
+</body>
+</html>
